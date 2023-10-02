@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+</head>
+
+<body class="md:bg-[#36384e] md:grid md:min-h-screen md:place-content-center" style="font-family: 'Roboto', sans-serif;">
+
+  <main>
+    <!-- Sign-up form start -->
+    <div id="home" class="md:flex lg:gap-x-10 md:bg-white md:rounded-3xl md:p-6 md:my-10 md:mx-4">
+      <div class="md:order-last md:flex md:justify-end">
+        <img class="block md:hidden w-full" src="assets/images/illustration-sign-up-mobile.svg" alt="illustration" />
+        <img class="hidden md:block" src="assets/images/illustration-sign-up-desktop.svg" alt="illustration">
+      </div>
+      <section class="px-6 py-8 lg:w-[30rem] lg:py-12 lg:px-10">
+        <h1 class="text-4xl font-bold lg:text-6xl">Stay updated!</h1>
+        <p class="my-6 md:my-8 lg:text-lg">Join 60,000+ product managers receiving monthly updates on:</p>
+        <div class="space-y-3 mb-8 md:mb-10">
+          <div class="flex gap-x-4 items-start">
+            <img src="assets/images/icon-list.svg" alt="icon" />
+            <p class="lg:text-lg">Product discovery and building what matters</p>
+          </div>
+          <div class="flex gap-x-4 items-start">
+            <img src="assets/images/icon-list.svg" alt="icon" />
+            <p class="lg:text-lg">Measuring to ensure updates are a success</p>
+          </div>
+          <div class="flex gap-x-4 items-start">
+            <img src="assets/images/icon-list.svg" alt="icon" />
+            <p class="lg:text-lg">And much more!</p>
+          </div>
+        </div>
+        <form id="form" name="form" onsubmit="suscribe(event)">
+          <div class="flex justify-between">
+            <label for="email" class="font-bold text-sm md:text-base">Email address</label>
+            <p id="errorMessage" class="invisible text-[#ff6257] font-bold text-sm md:text-base">Valid email required</p>
+          </div>
+          <input id="email" name="email" class="w-full border border-[#9294a0] rounded-lg py-4 pl-6 mb-6 mt-2 hover:cursor-pointer" type="email" placeholder="email@company.com" autocomplete="email">
+          <button class="bg-[#36384e] text-white py-4 w-full rounded-lg font-bold hover:bg-gradient-to-r from-[#ff6257] to-[#ff7e57] hover:shadow-[0_20px_30px_-15px_rgba(255,98,87,0.6)]" 
+          type="submit">Subscribe to monthly newsletter</button>
+        </form>
+      </section>
+    </div>
+    <!-- Sign-up form end -->
+
+    <!-- Success message start -->
+    <div id="success" class="hidden min-h-screen md:min-h-0 px-6 py-8 grid grid-rows-4 lg:h-[28rem] lg:w-[28rem] md:bg-white md:rounded-3xl md:p-10 md:mx-4">
+      <div class="flex flex-col justify-center gap-y-6 row-span-3">
+        <img class="w-16" src="assets/images/icon-success.svg" alt="icon" />
+        <h1 class="text-4xl md:text-5xl font-bold">Thanks for subscribing!</h1>
+        <p class="">A confirmation email has been sent to <span id="sentTo" class="font-bold"></span>
+          Please open it and click the button inside to confirm your subscription.
+        </p>
+      </div>
+      <div class="flex items-end row-start-4">
+        <button onclick="dismiss()" type="button" class="bg-[#36384e] text-white py-4 w-full rounded-lg font-bold hover:bg-gradient-to-r from-[#ff6257] to-[#ff7e57] hover:shadow-[0_20px_30px_-15px_rgba(255,98,87,0.6)]">
+          Dismiss message
+        </button>
+      </div>
+    </div>
+    <!-- Success message end -->
+  </main>
+  
+  <footer class="text-xs text-center text-[#9294a0] py-2">
+    <p>Challenge by <a class="font-bold hover:text-white" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a class="font-bold hover:text-white" href="#" target="_blank">Victoria Azola</a></p>
+  </footer>
+</body>
+<script src="index.js"></script>
+</html>
