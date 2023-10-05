@@ -32,6 +32,6 @@ function suscribe(event) {
 
 function dismiss() {
     success.classList.add("hidden")
-    home.style.display= "flex"
+    home.style.display= ""
     email.value = ""
 }
